@@ -2,7 +2,7 @@ name: Fetch Appstore Info
 
 on:
  schedule:
-     - cron: "0/3 * * * *"
+     - cron: "0/30 * * * *"
 
 jobs:
   build:
