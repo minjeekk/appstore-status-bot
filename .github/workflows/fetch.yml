@@ -14,7 +14,6 @@ jobs:
           node-version: "14.x"
       - uses: actions/setup-ruby@v1
         with:
-          ACTIONS_ALLOW_UNSECURE_COMMANDS: true
           ruby-version: "2.6"
       - run: gem install bundler:2.1.4
       - run: bundle install
@@ -30,7 +29,6 @@ jobs:
       - name: push
         uses: github-actions-x/commit@v2.7
         with:
-          ACTIONS_ALLOW_UNSECURE_COMMANDS: true
           github-token: ${{ secrets.GITHUB_TOKEN }}
           push-branch: 'master'
           commit-message: 'Store Appstore Info'
