@@ -33,8 +33,10 @@ def get_app_state(app)
 
   {
     "name" => app.name,
-    "version" => version_string,
-    "status" => app_store_state, 
+    "version" => edit_version_info.version_string,
+    "status" => edit_version_info.app_store_state.gsub("_", " ").capitalize, 
+#     "version" => version_string,
+#     "status" => app_store_state, 
     "appID" => app.id, 
     "iconURL" => icon_url
   }
