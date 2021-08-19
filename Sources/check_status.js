@@ -9,6 +9,7 @@ const env = Object.create(process.env);
 exec('ruby Sources/fetch_app_status.rb', {env : env}, function (err, stdout, stderr) {
     if (stdout) {
         var apps = JSON.parse(stdout);
+        console.log(apps)
         for(let app of apps) {
             checkVersion(app);
         }
