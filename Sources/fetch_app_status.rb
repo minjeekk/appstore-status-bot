@@ -35,8 +35,8 @@ def get_app_state(app)
     "name" => app.name,
     "version" => edit_version_info.version_string,
     "status" => edit_version_info.app_store_state.gsub("_", " ").capitalize, 
-#     "version" => version_string,
-#     "status" => app_store_state, 
+    "version" => version_string,
+    "status" => app_store_state, 
     "appID" => app.id, 
     "iconURL" => icon_url
   }
@@ -46,7 +46,8 @@ end
 def get_app_version_from(bundle_id) 
   apps = []
   if bundle_id
-    apps.push(Spaceship::ConnectAPI::App.find(bundle_id))
+#     apps.push(Spaceship::ConnectAPI::App.find(bundle_id))
+    apps.push(Spaceship::Tunes::Application.find(bundle_id))
   else 
     apps = Spaceship::ConnectAPI::App.all
   end 
